@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./modify-task.page.scss'],
 })
 export class ModifyTaskPage implements OnInit {
-
+  user : string ='user'
   constructor() { }
 
   ngOnInit() {

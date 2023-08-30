@@ -1,6 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>modify-task</ion-title>
+    <ion-title size="large" class="ion-text-center">MODIFY YOUR TASK</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -10,4 +10,26 @@
       <ion-title size="large">modify-task</ion-title>
     </ion-toolbar>
   </ion-header>
+  <p class="ion-margin">assigned to {{user}}</p>
+  <!-- <ion-list>
+    <p>Select status</p>
+    <ion-item>
+      <ion-select aria-label="Select Status" value="Choose">
+        <ion-select-option value="done">Done</ion-select-option>
+        <ion-select-option value="inProgress">In progress</ion-select-option>
+        <ion-select-option value="toStart">Not yet started</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list> -->
+  <ion-list>
+    <ion-item>
+      <ion-select placeholder="choose">
+        <div slot="label">Select a status <ion-text color="danger">(Required)</ion-text></div>
+        <ion-select-option value="done">Done</ion-select-option>
+        <ion-select-option value="inProgress">In progress</ion-select-option>
+        <ion-select-option value="toStart">Not yet started</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+  <ion-button class="center">Delete Task</ion-button>
 </ion-content>
