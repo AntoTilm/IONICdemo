@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { ModifyTaskPage } from './pages/modify-task/modify-task.page';
 
 const routes: Routes = [
   {
@@ -14,10 +15,13 @@ const routes: Routes = [
   {
     path: 'add-task',
     loadChildren: () => import('./pages/add-task/add-task.module').then( m => m.AddTaskPageModule)
-  },  {
+  },
+  {
     path: 'modify-task',
     loadChildren: () => import('./pages/modify-task/modify-task.module').then( m => m.ModifyTaskPageModule)
   },
+  { path: 'modify-task/:id', component: ModifyTaskPage },
+
 
 ];
 

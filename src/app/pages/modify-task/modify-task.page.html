@@ -1,6 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title size="large" class="ion-text-center">MODIFY YOUR TASK</ion-title>
+    <ion-title size="large" class="ion-text-center">TASK NAME</ion-title> <!-- afficher le nom de la tâche-->
   </ion-toolbar>
 </ion-header>
 
@@ -31,5 +31,7 @@
       </ion-select>
     </ion-item>
   </ion-list>
-  <ion-button class="center">Delete Task</ion-button>
+  <ion-button class="ion-margin center">Update Task</ion-button>
+  <ion-button class="ion-margin center">Delete Task</ion-button>
+  <ion-button class="ion-margin center" [routerLink]="'/home'">Task List</ion-button>
 </ion-content>
