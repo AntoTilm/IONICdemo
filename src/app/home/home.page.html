@@ -13,11 +13,11 @@
     </ion-toolbar>
   </ion-header>
 
-  <div id="container"> <!-- ngFor à faire -->
-    <ul>
-      <!-- <li (click)="getTaskdetails(item.id)" *ngFor="let item of showedList">{{item.name}}</li> -->
-      <li *ngFor="let item of showedList"><a [routerLink]="'/modify-task/' + item.id">{{item.name}}</a></li>
+  <div id="container">
+
+    <ul>  <!-- 'done' 'in progress' 'not started' -->
+      <li *ngFor="let item of showedList" [ngClass]="{'inProgress': item.status === 'in progress', 'done' : item.status === 'done', 'toStart' : item.status === 'to start'}"><a [routerLink]="'/modify-task/' + item.id">{{item.name}}</a></li>
     </ul>
-    <ion-button [routerLink]="'/add-task/'">create Task</ion-button> <!-- renvoie sur la page addTask -->
+    <ion-button [routerLink]="'/add-task/'">create Task</ion-button>
   </div>
 </ion-content>

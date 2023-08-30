@@ -3,4 +3,5 @@ export interface iTask {
     name : string;
     assignedUser : string;
     deadline : Date;
+    status : string;
 }

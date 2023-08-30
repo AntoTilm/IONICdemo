@@ -23,6 +23,7 @@ export class ModifyTaskPage implements OnInit {
         name : [null],
         assignedUser : [null],
         deadline : [null],
+        status : [null],
       });
 
       this.taskId = +this._activeRoute.snapshot.params['id'];
@@ -33,6 +34,7 @@ export class ModifyTaskPage implements OnInit {
         name : task?.name,
         assignedUser : task?.assignedUser,
         deadline : task?.deadline,
+        status : task?.status,
       });
     }
 
