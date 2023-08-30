@@ -14,10 +14,9 @@
   </ion-header>
 
   <div id="container"> <!-- ngFor à faire-->
-    <p class="done">Car painting</p>
-    <p class="inProgress">Cat washing</p>
-    <p class="pastEndDate">Wall feeding</p>
-    <p class="toStart">Dam building</p>
+    <ul>
+      <li (click)="getTaskdetails(item.id)" *ngFor="let item of showedList">{{item.name}}</li>
+    </ul>
     <ion-button>create Task</ion-button> <!-- renvoie sur la page addTask-->
   </div>
 </ion-content>

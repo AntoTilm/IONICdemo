@@ -7,14 +7,11 @@ import { iTask } from '../models/iTask';
 export class TasksService {
 
   private _tasks : iTask[] = [
-    // { id : Number,
-    //   name : 'dishes washing',
-    //   assignedUser : 'tof',
-    //   deadline : new Date(2000,8,11)},
-    
+    { id : 1,
+      name : 'dishes washing',
+      assignedUser : 'tof',
+      deadline : new Date(2000,8,11)},    
   ];
-
-
 
   constructor() { }
 
