@@ -17,6 +17,10 @@ export class TaskListPage implements OnInit {
      this.showedList = this._tasksService.getAll()
   }
 
+  ngOnChange(): void {
+    this.showedList = this._tasksService.getAll()
+  }
+
   getTaskdetails(id : number): void {
     this._tasksService.getById(id)
  }
