@@ -44,8 +44,15 @@ export class TasksService {
 
   }
 
-  updateTask(): void {
-
+  updateTask(id:number, task : iTask): void {
+    let taskToUpdate : iTask | undefined = this._tasks.find(track => track.id === id);
+    //Si track trouvée : modif
+    if(taskToUpdate) {
+      taskToUpdate.name = task.name;
+      taskToUpdate.assignedUser = task.assignedUser;
+      taskToUpdate.deadline = task.deadline;
+      taskToUpdate.status = task.status;
+    }
   }
   deleteTask(): void {
 

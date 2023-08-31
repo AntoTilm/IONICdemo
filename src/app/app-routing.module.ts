@@ -20,7 +20,11 @@ const routes: Routes = [
     path: 'modify-task',
     loadChildren: () => import('./pages/modify-task/modify-task.module').then( m => m.ModifyTaskPageModule)
   },
-  { path: 'modify-task/:id', component: ModifyTaskPage },
+  { path: 'modify-task/:id', component: ModifyTaskPage },  {
+    path: 'task-list',
+    loadChildren: () => import('./pages/task-list/task-list.module').then( m => m.TaskListPageModule)
+  },
+
 
 
 ];
