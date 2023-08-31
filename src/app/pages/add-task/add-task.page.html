@@ -26,13 +26,19 @@
           </textarea>
         </div>
         <div class="form-group">
-          <label for="imageUrl">URL de l'image</label>
-          <input id="imageUrl" type="text" formControlName="imageUrl">
+          <label for="deadline">Deadline</label>
+          <input id="deadline" type="text" formControlName="deadline">
         </div>
-        <div class="form-group">
-          <label for="location">Lieu</label>
-          <input id="location" type="text" formControlName="location">
-        </div>
+        <ion-list>
+          <p>Select status</p>
+          <ion-item>
+            <ion-select aria-label="Select Status" value="Choose">
+              <ion-select-option value="done">Done</ion-select-option>
+              <ion-select-option value="inProgress">In progress</ion-select-option>
+              <ion-select-option value="toStart">Not yet started</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-list>
         <div class="action-buttons">
           <button type="submit" (click)="onSubmitForm()">Enregistrer</button>
         </div>      
