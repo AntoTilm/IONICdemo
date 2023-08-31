@@ -54,8 +54,8 @@ export class TasksService {
       taskToUpdate.status = task.status;
     }
   }
-  deleteTask(): void {
-
+  deleteTask(): void { 
+    // this._tasks = this._tasks.filter(task => task.id !== id);
   }
 
 }

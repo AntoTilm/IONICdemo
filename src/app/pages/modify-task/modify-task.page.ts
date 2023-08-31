@@ -14,7 +14,7 @@ import { TasksService } from 'src/app/shared/services/tasks.service';
 export class ModifyTaskPage implements OnInit {
   
   task:iTask | undefined
-  taskForm : FormGroup;
+  taskForm! : FormGroup;
   taskId : number;
   
   
@@ -42,11 +42,20 @@ export class ModifyTaskPage implements OnInit {
     }
 
 taskUpdate() {
-
+console.log('task to update')
+this._taskService.updateTask(this.taskId , this.taskForm.value);
+this._router.navigateByUrl('task-list');
 }
 
+taskDelete() { // voir si c'est pertinent d'avoir la méthode ici... peut etre ajouter une ❌ à coté de la tache pour l'effacer
+  // console.log('task to delete')
+  // this._taskService.deleteTask(id);
+  // this._router.navigateByUrl('task-list');
+}
+
+
   ngOnInit() {
-    this.taskId = +this._activeRoute.snapshot.params['id'];
+  this.taskId = +this._activeRoute.snapshot.params['id'];
   this.task = this._taskService.getById(this.taskId);
   this.taskForm.patchValue({
     name: this.task?.name,
