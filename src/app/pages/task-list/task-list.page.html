@@ -1,0 +1,25 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      TO DO LIST
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large" class="ion-text-center">TO DO LIST</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div id="container">
+
+    <ul>  <!-- 'done' 'in progress' 'not started' -->
+      <li *ngFor="let item of showedList" [ngClass]="{'inProgress': item.status === 'in progress', 'done' : item.status === 'done', 'toStart' : item.status === 'to start'}"><a [routerLink]="'/modify-task/' + item.id">{{item.name}}</a></li>
+    </ul>
+    <ion-button [routerLink]="'/add-task/'">create Task</ion-button>
+<br>
+    <ion-button [routerLink]="'/home/'">HOME</ion-button>
+  </div>
+</ion-content>

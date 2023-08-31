@@ -1,6 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title size="large" class="ion-text-center">TASK NAME</ion-title> <!-- afficher le nom de la tâche-->
+    <ion-title size="large" class="ion-text-center">{{task?.name}}</ion-title> <!-- afficher le nom de la tâche-->
   </ion-toolbar>
 </ion-header>
 
@@ -10,7 +10,7 @@
       <ion-title size="large">modify-task</ion-title>
     </ion-toolbar>
   </ion-header>
-  <p class="ion-margin">assigned to {{user}}</p>
+  <p class="ion-margin">assigned to {{task?.assignedUser}}</p>
   <!-- <ion-list>
     <p>Select status</p>
     <ion-item>
@@ -21,7 +21,28 @@
       </ion-select>
     </ion-item>
   </ion-list> -->
-  <ion-list>
+  <p class="ion-margin">Status</p>
+
+
+  <form [formGroup]="taskForm" (ngSubmit)="taskUpdate()">
+    <div>
+        <select formControlName="status" placeholder="choose">
+            <option value="" hidden>Choose the task status</option>
+            <option value="to start">to start</option>
+            <option value="in progress">in progress</option>
+            <option value="done">done</option>
+        </select>
+    </div>
+</form>
+  
+  
+  
+  
+  
+  
+  
+  
+  <!-- <ion-list>
     <ion-item>
       <ion-select placeholder="choose">
         <div slot="label">Select a status <ion-text color="danger">(Required)</ion-text></div>
@@ -30,8 +51,8 @@
         <ion-select-option value="toStart">Not yet started</ion-select-option>
       </ion-select>
     </ion-item>
-  </ion-list>
+  </ion-list> -->
   <ion-button class="ion-margin center">Update Task</ion-button>
   <ion-button class="ion-margin center">Delete Task</ion-button>
-  <ion-button class="ion-margin center" [routerLink]="'/home'">Task List</ion-button>
+  <ion-button class="ion-margin center" [routerLink]="'/task-list'">Task List</ion-button>
 </ion-content>

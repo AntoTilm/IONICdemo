@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      TO DO LIST
+      IONIC PROJECT
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -15,9 +15,8 @@
 
   <div id="container">
 
-    <ul>  <!-- 'done' 'in progress' 'not started' -->
-      <li *ngFor="let item of showedList" [ngClass]="{'inProgress': item.status === 'in progress', 'done' : item.status === 'done', 'toStart' : item.status === 'to start'}"><a [routerLink]="'/modify-task/' + item.id">{{item.name}}</a></li>
-    </ul>
-    <ion-button [routerLink]="'/add-task/'">create Task</ion-button>
+    
+      <ion-button [routerLink]="'/task-list/'">To Do List</ion-button><br>
+      <ion-button [routerLink]="'/home/'">the other project</ion-button>
   </div>
 </ion-content>
