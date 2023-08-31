@@ -29,16 +29,14 @@
           <label for="deadline">Deadline</label>
           <input id="deadline" type="date" formControlName="deadline">
         </div>
-        <ion-list>
-          <label for="status">Select Status</label>
-          <ion-item>
-            <ion-select ion-label="Select Status" value="Choose">
-              <ion-select-option value="done">Done</ion-select-option>
-              <ion-select-option value="in progress">In progress</ion-select-option>
-              <ion-select-option value="to start">Not yet started</ion-select-option>
-            </ion-select>
-          </ion-item>
-        </ion-list>
+        <div>
+          <select formControlName="status" placeholder="choose">
+              <option value="" hidden>Choose the task status</option>
+              <option value="to start">to start</option>
+              <option value="in progress">in progress</option>
+              <option value="done">done</option>
+          </select>
+        </div>
         <div class="action-buttons">
           <button type="submit" (click)="onSubmitForm()">Enregistrer</button>
         </div>      
