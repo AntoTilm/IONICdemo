@@ -13,15 +13,31 @@
   </ion-header>
 
   <section>
-    <h2>Task title</h2>
-    <input type="text">
-    <h2>Assigned to</h2>
-    <input type="text">
-    <h2>Deadline</h2>
-    <input type="text"><br>
-    <h2>Status</h2>
-    <input type="text"><br>
-    <ion-button class="ion-margin center">Add Task</ion-button>
+    <div class="form-card">
+      <h2>NOUVEAU FORMULAIRE</h2>
+      <form [formGroup]="taskForm">
+        <div class="form-group">
+          <label for="title">Title</label>
+          <input id="title" type="text" formControlName="title">
+        </div>
+        <div class="form-group">
+          <label for="assignedTo">Assigned To</label>
+          <textarea id="assignedTo" type="text" formControlName="assignedTo">
+          </textarea>
+        </div>
+        <div class="form-group">
+          <label for="imageUrl">URL de l'image</label>
+          <input id="imageUrl" type="text" formControlName="imageUrl">
+        </div>
+        <div class="form-group">
+          <label for="location">Lieu</label>
+          <input id="location" type="text" formControlName="location">
+        </div>
+        <div class="action-buttons">
+          <button type="submit" (click)="onSubmitForm()">Enregistrer</button>
+        </div>      
+      </form>
+  </div>
   </section>
   <ion-button class="ion-margin center" [routerLink]="'/home'">Task List</ion-button>
 </ion-content>
