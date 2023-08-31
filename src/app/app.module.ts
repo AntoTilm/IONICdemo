@@ -13,7 +13,7 @@ import { AddTaskPage } from './pages/add-task/add-task.page';
 
 
 @NgModule({
-  declarations: [AppComponent,ModifyTaskPage],
+  declarations: [AppComponent,ModifyTaskPage, AddTaskPage],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
