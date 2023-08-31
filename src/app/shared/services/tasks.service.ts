@@ -6,7 +6,7 @@ import { iTask } from '../models/iTask';
 })
 export class TasksService {
 
-  private _tasks: iTask[] = [
+  tasks: iTask[] = [
     {
       id: 1,
       name: 'dishes washing',
@@ -33,11 +33,11 @@ export class TasksService {
   constructor() { }
 
   getAll(): iTask[] {
-    return this._tasks
+    return this.tasks
   }
 
   getById(id: number): iTask | undefined {
-    return this._tasks.find(iTask => iTask.id === id);
+    return this.tasks.find(iTask => iTask.id === id);
   }
 
   createTask(): void {
@@ -45,7 +45,7 @@ export class TasksService {
   }
 
   updateTask(id:number, task : iTask): void {
-    let taskToUpdate : iTask | undefined = this._tasks.find(track => track.id === id);
+    let taskToUpdate : iTask | undefined = this.tasks.find(track => track.id === id);
     //Si track trouvée : modif
     if(taskToUpdate) {
       taskToUpdate.name = task.name;

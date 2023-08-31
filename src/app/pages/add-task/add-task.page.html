@@ -17,28 +17,26 @@
       <h2>NOUVEAU FORMULAIRE</h2>
       <form [formGroup]="taskForm">
         <div class="form-group">
-          <label for="title">Title</label>
-          <input id="title" type="text" formControlName="title">
+          <label for="name">Name</label>
+          <input id="name" type="text" formControlName="name">
         </div>
         <div class="form-group">
-          <label for="assignedTo">Assigned To</label>
-          <textarea id="assignedTo" type="text" formControlName="assignedTo">
+          <label for="assignedUser">Assigned To</label>
+          <textarea id="assignedUser" type="text" formControlName="assignedUser">
           </textarea>
         </div>
         <div class="form-group">
           <label for="deadline">Deadline</label>
-          <input id="deadline" type="text" formControlName="deadline">
+          <input id="deadline" type="date" formControlName="deadline">
         </div>
-        <ion-list>
-          <p>Select status</p>
-          <ion-item>
-            <ion-select aria-label="Select Status" value="Choose">
-              <ion-select-option value="done">Done</ion-select-option>
-              <ion-select-option value="inProgress">In progress</ion-select-option>
-              <ion-select-option value="toStart">Not yet started</ion-select-option>
-            </ion-select>
-          </ion-item>
-        </ion-list>
+        <div>
+          <select formControlName="status" placeholder="choose">
+              <option value="" hidden>Choose the task status</option>
+              <option value="to start">to start</option>
+              <option value="in progress">in progress</option>
+              <option value="done">done</option>
+          </select>
+        </div>
         <div class="action-buttons">
           <button type="submit" (click)="onSubmitForm()">Enregistrer</button>
         </div>      
