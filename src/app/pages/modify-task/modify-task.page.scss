@@ -1,0 +1,27 @@
+ion-content {
+    --ion-background-color: #f4f4f4; /* Couleur de fond */
+  }
+  
+  ion-title {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  ion-item {
+    --ion-item-background: #fff; /* Couleur de fond des items */
+  }
+  
+  ion-label {
+    font-weight: bold;
+  }
+  
+  ion-select {
+    --ion-border-color: #007bff; /* Couleur de la bordure du select */
+    --ion-color: #007bff; /* Couleur du texte du select */
+  }
+  
+  ion-button {
+    --ion-background-color: #007bff; /* Couleur de fond des boutons */
+    --ion-color: #fff; /* Couleur du texte des boutons */
+  }
+  

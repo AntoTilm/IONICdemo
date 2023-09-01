@@ -7,14 +7,14 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large" class="ion-text-center custom-title">TO DO LIST</ion-title>
+      <ion-title size="large" class="ion-text-center custom-title">A FAIRE</ion-title>
     </ion-toolbar>
   </ion-header>
 
   <ion-list class="custom-list">
     <ion-item *ngFor="let item of showedList">
       <ion-label [ngClass]="{'inProgress': item.status === 'in progress', 'done': item.status === 'done', 'toStart': item.status === 'to start'}">
-        <a [routerLink]="'/modify-task/' + item.id">{{ item.name }}</a>
+        <a [routerLink]="'/modify-task/' + item.id">{{ item.name | titlecase}}</a>
       </ion-label>
       <ion-icon slot="end" name="close-circle" (click)="taskDelete(item.id)"></ion-icon>
     </ion-item>

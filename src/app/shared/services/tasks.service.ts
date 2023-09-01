@@ -28,11 +28,148 @@ export class TasksService {
       deadline: new Date(2023, 8, 30),
       status: 'to start'
     },
+    {
+      id: 4,
+      name: 'Hotdog Eating',
+      assignedUser: 'Germain',
+      deadline: new Date(2023, 8, 30),
+      status: 'to start'
+    },
+    {
+      id: 5,
+      name: 'Hotdog Eating',
+      assignedUser: 'Germain',
+      deadline: new Date(2023, 8, 30),
+      status: 'to start'
+    },
+    {
+      id: 6,
+      name: 'Hotdog Eating',
+      assignedUser: 'Germain',
+      deadline: new Date(2023, 8, 30),
+      status: 'to start'
+    },
+    {
+      id: 7,
+      name: 'Hotdog Eating',
+      assignedUser: 'Germain',
+      deadline: new Date(2023, 8, 30),
+      status: 'to start'
+    },
+    {
+      id: 8,
+      name: 'Hotdog Eating',
+      assignedUser: 'Germain',
+      deadline: new Date(2023, 8, 30),
+      status: 'to start'
+    },
+    {
+      id: 9,
+      name: 'Hotdog Eating',
+      assignedUser: 'Germain',
+      deadline: new Date(2023, 8, 30),
+      status: 'to start'
+    },
+    {
+      id: 10,
+      name: 'Hotdog Eating',
+      assignedUser: 'Germain',
+      deadline: new Date(2023, 8, 30),
+      status: 'to start'
+    },
+    {
+      id: 11,
+      name: 'Hotdog Eating',
+      assignedUser: 'Germain',
+      deadline: new Date(2023, 8, 30),
+      status: 'to start'
+    },
+    {
+      id: 12,
+      name: 'Hotdog Eating',
+      assignedUser: 'Germain',
+      deadline: new Date(2023, 8, 30),
+      status: 'to start'
+    },
+    {
+      id: 13,
+      name: 'Hotdog Eating',
+      assignedUser: 'Germain',
+      deadline: new Date(2023, 8, 30),
+      status: 'to start'
+    },
+    {
+      id: 14,
+      name: 'Hotdog Eating',
+      assignedUser: 'Germain',
+      deadline: new Date(2023, 8, 30),
+      status: 'to start'
+    },
+    {
+      id: 15,
+      name: 'Hotdog Eating',
+      assignedUser: 'Germain',
+      deadline: new Date(2023, 8, 30),
+      status: 'to start'
+    },
+    {
+      id: 16,
+      name: 'Hotdog Eating',
+      assignedUser: 'Germain',
+      deadline: new Date(2023, 8, 30),
+      status: 'to start'
+    },
+    {
+      id: 17,
+      name: 'Hotdog Eating',
+      assignedUser: 'Germain',
+      deadline: new Date(2023, 8, 30),
+      status: 'to start'
+    },
+    {
+      id: 18,
+      name: 'Hotdog Eating',
+      assignedUser: 'Germain',
+      deadline: new Date(2023, 8, 30),
+      status: 'to start'
+    },
+    {
+      id: 19,
+      name: 'Hotdog Eating',
+      assignedUser: 'Germain',
+      deadline: new Date(2023, 8, 30),
+      status: 'to start'
+    },
+    {
+      id: 20,
+      name: 'Hotdog Eating',
+      assignedUser: 'Germain',
+      deadline: new Date(2023, 8, 30),
+      status: 'to start'
+    },
+    {
+      id: 21,
+      name: 'Hotdog Eating',
+      assignedUser: 'Germain',
+      deadline: new Date(2023, 8, 30),
+      status: 'to start'
+    },
+    {
+      id: 22,
+      name: 'Hotdog Eating',
+      assignedUser: 'Germain',
+      deadline: new Date(2023, 8, 30),
+      status: 'to start'
+    },
+    {
+      id: 23,
+      name: 'Hotdog Eating',
+      assignedUser: 'Germain',
+      deadline: new Date(2023, 8, 30),
+      status: 'to start'
+    },
   ];
 
-  // constructor(private _taskService : TasksService) {
-  //   this.tasks=this._taskService.getAll();
-  //  }
 
    constructor() {
 

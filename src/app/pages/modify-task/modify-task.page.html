@@ -1,63 +1,37 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title size="large" class="ion-text-center">{{task?.assignedUser | uppercase}} : {{task?.name | titlecase}}</ion-title> <!-- afficher le nom de la tâche-->
+    <ion-title size="large" class="ion-text-center">{{ task?.assignedUser | uppercase }} : {{ task?.name | titlecase }}</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" class="ion-padding">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">modify-task</ion-title>
+      <ion-title size="large">Modify Task</ion-title>
     </ion-toolbar>
   </ion-header>
+
   <form [formGroup]="taskForm" (ngSubmit)="taskUpdate()">
-  <p class="ion-margin">change task name</p>
-  <input type="text" placeholder="{{task?.name}}" formControlName="name">
+    <ion-item class="ion-margin">
+      <ion-label position="stacked">Change Task Name</ion-label>
+      <ion-input type="text" placeholder="{{ task?.name }}" formControlName="name"></ion-input>
+    </ion-item>
 
-  <p class="ion-margin">change assigned user</p>
-  <input type="text" placeholder="{{task?.assignedUser}}" formControlName="assignedUser">
+    <ion-item class="ion-margin">
+      <ion-label position="stacked">Change Assigned User</ion-label>
+      <ion-input type="text" placeholder="{{ task?.assignedUser }}" formControlName="assignedUser"></ion-input>
+    </ion-item>
 
-  <!-- <p class="ion-margin">assigned to {{task?.assignedUser}}</p> -->
-  <!-- <ion-list>
-    <p>Select status</p>
-    <ion-item>
-      <ion-select aria-label="Select Status" value="Choose">
+    <ion-item class="ion-margin">
+      <ion-label position="stacked">Status</ion-label>
+      <ion-select formControlName="status" placeholder="Choose the task status">
+        <ion-select-option value="to start">To Start</ion-select-option>
+        <ion-select-option value="in progress">In Progress</ion-select-option>
         <ion-select-option value="done">Done</ion-select-option>
-        <ion-select-option value="inProgress">In progress</ion-select-option>
-        <ion-select-option value="toStart">Not yet started</ion-select-option>
       </ion-select>
     </ion-item>
-  </ion-list> -->
-  <p class="ion-margin">Status</p>
+  </form>
 
-
-    <div>
-        <select formControlName="status" placeholder="choose">
-            <option value="" hidden>Choose the task status</option>
-            <option value="to start">to start</option>
-            <option value="in progress">in progress</option>
-            <option value="done">done</option>
-        </select>
-    </div>
-</form>
-  
-  
-  
-  
-  
-  
-  
-  
-  <!-- <ion-list>
-    <ion-item>
-      <ion-select placeholder="choose">
-        <div slot="label">Select a status <ion-text color="danger">(Required)</ion-text></div>
-        <ion-select-option value="done">Done</ion-select-option>
-        <ion-select-option value="inProgress">In progress</ion-select-option>
-        <ion-select-option value="toStart">Not yet started</ion-select-option>
-      </ion-select>
-    </ion-item>
-  </ion-list> -->
-  <ion-button class="ion-margin center" (click)="taskUpdate()">Update Task</ion-button>
-  <ion-button class="ion-margin center" [routerLink]="'/task-list'">Task List</ion-button>
+  <ion-button expand="full" class="ion-margin" (click)="taskUpdate()" shape="round">Update Task</ion-button>
+  <ion-button expand="full" class="ion-margin" [routerLink]="'/task-list'" shape="round">Task List</ion-button>
 </ion-content>
