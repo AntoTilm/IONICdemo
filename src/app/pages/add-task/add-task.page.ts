@@ -21,12 +21,12 @@ export class AddTaskPage implements OnInit {
   //       deadline : [null],
   //       status : [null],
   //     });
+  taskForm!: FormGroup;
 
   constructor(tasksService: TasksService, private formBuilder: FormBuilder,private _router : Router,private _activeRoute : ActivatedRoute) {
     this._tasksService = tasksService; // Initialiser la propriété _tasksService avec l'instance reçue du constructeur
   }
 
-  taskForm!: FormGroup;
 
   ngOnInit() {
     this.taskForm = this.formBuilder.group({

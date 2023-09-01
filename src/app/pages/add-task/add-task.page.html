@@ -1,4 +1,4 @@
-<ion-header [translucent]="true">
+<!-- <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>Add Task</ion-title>
   </ion-toolbar>
@@ -44,4 +44,54 @@
   </div>
   </section>
   <ion-button class="ion-margin center" [routerLink]="'/task-list'">Task List</ion-button>
+</ion-content> -->
+
+
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title class="ion-text-center">Add Task</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">ADD TASK</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <section class="form-section">
+    <div class="form-card">
+      <!-- <h2>NEW TASK</h2> -->
+      <form [formGroup]="taskForm" (ngSubmit)="onSubmitForm()">
+        <ion-item class="form-group">
+          <ion-label position="floating">Name</ion-label>
+          <ion-input type="text" formControlName="name"></ion-input>
+        </ion-item>
+
+        <ion-item class="form-group">
+          <ion-label position="floating">Assigned To</ion-label>
+          <ion-textarea formControlName="assignedUser"></ion-textarea>
+        </ion-item>
+
+        <ion-item class="form-group">
+          <ion-label position="floating">Deadline</ion-label>
+          <ion-input type="date" formControlName="deadline"></ion-input>
+        </ion-item>
+
+        <ion-item class="form-group">
+          <ion-label>Status</ion-label>
+          <ion-select formControlName="status" placeholder="Choose the task status">
+            <ion-select-option value="to start">To Start</ion-select-option>
+            <ion-select-option value="in progress">In Progress</ion-select-option>
+            <ion-select-option value="done">Done</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-button expand="full" class="ion-margin center" type="submit" shape="round">Save</ion-button>
+      </form>
+      <ion-button expand="full" class="ion-margin center" [routerLink]="'/task-list'" shape="round">Return to Task List</ion-button>
+    </div>
+  </section>
+
 </ion-content>
