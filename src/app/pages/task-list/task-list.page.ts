@@ -11,7 +11,9 @@ export class TaskListPage implements OnInit {
 
   showedList : iTask[] = []
 
-  constructor(private _tasksService: TasksService) { }
+  constructor(private _tasksService: TasksService) {
+    this.showedList = this._tasksService.getAll();
+   }
 
   ngOnInit(): void {
      this.showedList = this._tasksService.getAll()
@@ -25,6 +27,11 @@ export class TaskListPage implements OnInit {
     this._tasksService.getById(id)
  }
   
+ taskDelete(id : number) { 
+  console.log('task to delete')
+  this._tasksService.deleteTask(id);
+  this.showedList = this._tasksService.getAll();
+}
 
 
 }

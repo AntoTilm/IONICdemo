@@ -47,11 +47,7 @@ this._taskService.updateTask(this.taskId , this.taskForm.value);
 this._router.navigateByUrl('task-list');
 }
 
-taskDelete() { // voir si c'est pertinent d'avoir la méthode ici... peut etre ajouter une ❌ à coté de la tache pour l'effacer
-  // console.log('task to delete')
-  // this._taskService.deleteTask(id);
-  // this._router.navigateByUrl('task-list');
-}
+
 
 
   ngOnInit() {

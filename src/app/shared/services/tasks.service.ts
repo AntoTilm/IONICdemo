@@ -30,7 +30,13 @@ export class TasksService {
     },
   ];
 
-  constructor() { }
+  // constructor(private _taskService : TasksService) {
+  //   this.tasks=this._taskService.getAll();
+  //  }
+
+   constructor() {
+
+   }
 
   getAll(): iTask[] {
     return this.tasks
@@ -54,8 +60,8 @@ export class TasksService {
       taskToUpdate.status = task.status;
     }
   }
-  deleteTask(): void { 
-    // this._tasks = this._tasks.filter(task => task.id !== id);
+  deleteTask(id : number): void { 
+    this.tasks = this.tasks.filter(tasks => tasks.id !== id);
   }
 
 }

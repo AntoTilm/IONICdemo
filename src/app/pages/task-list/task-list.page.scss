@@ -26,17 +26,64 @@
   }
   
   .done {
-    background-color: green
+    background-color: green;
+    font-size: 32px;
   }
   
   .inProgress {
-    background-color: orange
+    background-color: orange;
+    font-size: 32px;
   }
   
   .pastEndDate {
-    background-color: red
+    background-color: red;
+    font-size: 32px;
   }
   
   .toStart {
-    background-color: gray
+    background-color: gray;
+    font-size: 32px;
   }
+  
+  ion-title {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  ion-list {
+    margin-top: 20px;
+  }
+
+  ion-list a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  ion-item {
+    border-bottom: 1px solid #ccc;
+  }
+  
+  ion-button {
+    margin-top: 10px;
+  }
+  
+  ion-icon {
+    font-size: 24px;
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+  
+  /* Style pour le bouton "Create Task" */
+  ion-button[expand="full"][routerLink="'/add-task/'"] {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  /* Style pour le bouton "HOME" */
+  ion-button[expand="full"][routerLink="'/home/'"] {
+    background-color: #28a745;
+    color: white;
+  }
+
+  
