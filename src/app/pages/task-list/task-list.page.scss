@@ -1,89 +1,80 @@
-#container {
-    text-align: center;
-   
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap');
+
   
-    position: absolute;
-    left: 0;
-    right: 0;
-    // top: 20%;
-    // transform: translateY(-50%);
-  }
-  
-  
-  
-  #container p {
-    font-size: 32px;
-    line-height: 40px;
-  
-    // color: #8c8c8c;
-  
-    margin: 0;
-    margin-bottom: 10px;
-  }
-  
-  #container a {
+#container a {
     text-decoration: none;
-  }
+}
   
-  .done {
-    background-color: green;
-    font-size: 32px;
-  }
+.done {
+    background-color: #E9EC6B;
+    font-size: 2rem;
+}
   
-  .inProgress {
-    background-color: orange;
-    font-size: 32px;
-  }
+.inProgress {
+    background-color: #EFBE7D;
+    font-size: 2rem;
+}
   
-  .pastEndDate {
-    background-color: red;
-    font-size: 32px;
-  }
+.pastEndDate {
+    background-color: #FF6D6A;
+    font-size: 2rem;
+}
   
-  .toStart {
-    background-color: gray;
-    font-size: 32px;
-  }
+.toStart {
+    background-color: #8BD3E6;
+    font-size: 2rem;
+}
   
-  ion-title {
-    font-size: 24px;
+ion-title {
+    font-size: 2rem;
     font-weight: bold;
     text-align: center;
-  }
+}
   
-  ion-list {
-    margin-top: 20px;
-  }
 
-  ion-list a {
+ion-list a {
     text-decoration: none;
     color: inherit;
-  }
+    font-family: 'Amatic SC', cursive;
+    font-size: 2rem; 
+    margin: 5%; 
+}
   
-  ion-item {
-    border-bottom: 1px solid #ccc;
-  }
-  
-  ion-button {
+ion-button {
     margin-top: 10px;
-  }
+    width: 50%;
+
+
+}
+.buttonCenter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
   
-  ion-icon {
+ion-icon {
     font-size: 24px;
     margin-right: 8px;
     vertical-align: middle;
-  }
+}
   
-  /* Style pour le bouton "Create Task" */
-  ion-button[expand="full"][routerLink="'/add-task/'"] {
-    background-color: #007bff;
+/* Style pour le bouton "Create Task" */
+ion-button[expand="full"][routerLink="'/add-task/'"] {
+    background-color: #B1A2CA;
     color: white;
-  }
+}
   
-  /* Style pour le bouton "HOME" */
-  ion-button[expand="full"][routerLink="'/home/'"] {
+/* Style pour le bouton "HOME" */
+ion-button[expand="full"][routerLink="'/home/'"] {
     background-color: #28a745;
     color: white;
-  }
+}
 
-  
+.custom-button {
+    background-color: #B1A2CA;
+    color: white;
+}
+
+.custom-list {
+    max-height: 80%;
+}
