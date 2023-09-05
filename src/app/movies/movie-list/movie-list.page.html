@@ -1,0 +1,10 @@
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">movie-list</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-input aria-label="search for movie" [clearInput]="true" type="text" [(ngModel)]="inputValue" (keyup.enter)="onEnter($event)"></ion-input>
+  <img *ngIf="movie.Poster" [src]="movie.Poster" alt="movie poster">
+  <p>{{movie.Title}}</p>
+</ion-content>

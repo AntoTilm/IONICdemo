@@ -9,12 +9,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ModifyTaskPage } from './pages/modify-task/modify-task.page';
 import { AddTaskPage } from './pages/add-task/add-task.page';
+import {HttpClientModule} from "@angular/common/http";
 
 
 
 @NgModule({
   declarations: [AppComponent,ModifyTaskPage, AddTaskPage],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, FormsModule, ReactiveFormsModule],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, FormsModule, ReactiveFormsModule, HttpClientModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })

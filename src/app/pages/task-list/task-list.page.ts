@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { iTask } from 'src/app/shared/models/iTask';
 import { TasksService } from 'src/app/shared/services/tasks.service';
+import {MovieService} from "../../shared/services/movie.service";
 
 @Component({
   selector: 'app-task-list',
@@ -12,7 +13,6 @@ export class TaskListPage implements OnInit {
   showedList : iTask[] = []
 
   constructor(private _tasksService: TasksService) {
-    this.showedList = this._tasksService.getAll();
    }
 
   ngOnInit(): void {
@@ -26,8 +26,8 @@ export class TaskListPage implements OnInit {
   getTaskdetails(id : number): void {
     this._tasksService.getById(id)
  }
-  
- taskDelete(id : number) { 
+
+ taskDelete(id : number) {
   console.log('task to delete')
   this._tasksService.deleteTask(id);
   this.showedList = this._tasksService.getAll();
