@@ -6,177 +6,30 @@ import { iTask } from '../models/iTask';
 })
 export class TasksService {
 
-  tasks: iTask[] = [
-    {
-      id: 1,
-      name: 'dishes washing',
-      assignedUser: 'tof',
-      deadline: new Date(2000, 8, 11),
-      status: 'in progress'
-    },
-    {
-      id: 2,
-      name: 'dog walking',
-      assignedUser: 'antoine',
-      deadline: new Date(2025, 5, 8),
-      status: 'done'
-    },
-    {
-      id: 3,
-      name: 'Hotdog Eating',
-      assignedUser: 'Germain',
-      deadline: new Date(2023, 8, 30),
-      status: 'to start'
-    },
-    {
-      id: 4,
-      name: 'Hotdog Eating',
-      assignedUser: 'Germain',
-      deadline: new Date(2023, 8, 30),
-      status: 'to start'
-    },
-    {
-      id: 5,
-      name: 'Hotdog Eating',
-      assignedUser: 'Germain',
-      deadline: new Date(2023, 8, 30),
-      status: 'to start'
-    },
-    {
-      id: 6,
-      name: 'Hotdog Eating',
-      assignedUser: 'Germain',
-      deadline: new Date(2023, 8, 30),
-      status: 'to start'
-    },
-    {
-      id: 7,
-      name: 'Hotdog Eating',
-      assignedUser: 'Germain',
-      deadline: new Date(2023, 8, 30),
-      status: 'to start'
-    },
-    {
-      id: 8,
-      name: 'Hotdog Eating',
-      assignedUser: 'Germain',
-      deadline: new Date(2023, 8, 30),
-      status: 'to start'
-    },
-    {
-      id: 9,
-      name: 'Hotdog Eating',
-      assignedUser: 'Germain',
-      deadline: new Date(2023, 8, 30),
-      status: 'to start'
-    },
-    {
-      id: 10,
-      name: 'Hotdog Eating',
-      assignedUser: 'Germain',
-      deadline: new Date(2023, 8, 30),
-      status: 'to start'
-    },
-    {
-      id: 11,
-      name: 'Hotdog Eating',
-      assignedUser: 'Germain',
-      deadline: new Date(2023, 8, 30),
-      status: 'to start'
-    },
-    {
-      id: 12,
-      name: 'Hotdog Eating',
-      assignedUser: 'Germain',
-      deadline: new Date(2023, 8, 30),
-      status: 'to start'
-    },
-    {
-      id: 13,
-      name: 'Hotdog Eating',
-      assignedUser: 'Germain',
-      deadline: new Date(2023, 8, 30),
-      status: 'to start'
-    },
-    {
-      id: 14,
-      name: 'Hotdog Eating',
-      assignedUser: 'Germain',
-      deadline: new Date(2023, 8, 30),
-      status: 'to start'
-    },
-    {
-      id: 15,
-      name: 'Hotdog Eating',
-      assignedUser: 'Germain',
-      deadline: new Date(2023, 8, 30),
-      status: 'to start'
-    },
-    {
-      id: 16,
-      name: 'Hotdog Eating',
-      assignedUser: 'Germain',
-      deadline: new Date(2023, 8, 30),
-      status: 'to start'
-    },
-    {
-      id: 17,
-      name: 'Hotdog Eating',
-      assignedUser: 'Germain',
-      deadline: new Date(2023, 8, 30),
-      status: 'to start'
-    },
-    {
-      id: 18,
-      name: 'Hotdog Eating',
-      assignedUser: 'Germain',
-      deadline: new Date(2023, 8, 30),
-      status: 'to start'
-    },
-    {
-      id: 19,
-      name: 'Hotdog Eating',
-      assignedUser: 'Germain',
-      deadline: new Date(2023, 8, 30),
-      status: 'to start'
-    },
-    {
-      id: 20,
-      name: 'Hotdog Eating',
-      assignedUser: 'Germain',
-      deadline: new Date(2023, 8, 30),
-      status: 'to start'
-    },
-    {
-      id: 21,
-      name: 'Hotdog Eating',
-      assignedUser: 'Germain',
-      deadline: new Date(2023, 8, 30),
-      status: 'to start'
-    },
-    {
-      id: 22,
-      name: 'Hotdog Eating',
-      assignedUser: 'Germain',
-      deadline: new Date(2023, 8, 30),
-      status: 'to start'
-    },
-    {
-      id: 23,
-      name: 'Hotdog Eating',
-      assignedUser: 'Germain',
-      deadline: new Date(2023, 8, 30),
-      status: 'to start'
-    },
-  ];
+  tasks: iTask[] = []
 
+  constructor() {
+    this.generateTasks();
+  }
 
-   constructor() {
-
-   }
+  private generateTasks() {
+    for (let i = 1; i <= 100; i++) {
+      this.tasks.push({
+        id: i,
+        name: `Task ${i}`,
+        assignedUser: `User ${i}`,
+        deadline: new Date(2023, 9, i + 1),
+        status: i % 3 === 0 ? 'done' : i % 2 === 0 ? 'in progress' : 'to start'
+      });
+    }
+  }
 
   getAll(): iTask[] {
     return this.tasks
+  }
+  getFirstTenElements() {
+    // Utilisez la méthode slice() pour obtenir les 10 premiers éléments du tableau
+    return this.tasks.slice(0, 10);
   }
 
   getById(id: number): iTask | undefined {
@@ -197,8 +50,10 @@ export class TasksService {
       taskToUpdate.status = task.status;
     }
   }
+
   deleteTask(id : number): void { 
     this.tasks = this.tasks.filter(tasks => tasks.id !== id);
   }
+  
 
 }

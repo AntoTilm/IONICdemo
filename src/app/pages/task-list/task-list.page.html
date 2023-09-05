@@ -11,14 +11,21 @@
     </ion-toolbar>
   </ion-header>
 
-  <ion-list [inset]="true" class="custom-list">
-    <ion-item *ngFor="let item of showedList">
-      <ion-label [ngClass]="{'inProgress': item.status === 'in progress', 'done': item.status === 'done', 'toStart': item.status === 'to start'}">
-        <a [routerLink]="'/modify-task/' + item.id">{{ item.name | titlecase}}</a>
-      </ion-label>
-      <ion-icon slot="end" name="close-circle" (click)="taskDelete(item.id)"></ion-icon>
-    </ion-item>
-  </ion-list>
+  <ion-content class="custom-list">
+    <ion-list [inset]="true" >
+      <ion-item *ngFor="let item of showedList">
+        <ion-label [ngClass]="{'inProgress': item.status === 'in progress', 'done': item.status === 'done', 'toStart': item.status === 'to start'}">
+          <a [routerLink]="'/modify-task/' + item.id">{{ item.name | titlecase}}</a>
+        </ion-label>
+        <ion-icon slot="end" name="close-circle" (click)="taskDelete(item.id)"></ion-icon>
+      </ion-item>
+    </ion-list>
+    <ion-infinite-scroll (ionInfinite)="onIonInfinite($event)">
+      <ion-infinite-scroll-content></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+  </ion-content>
+    
+    
   
 
   <div class="buttonCenter">
@@ -30,4 +37,3 @@
       <ion-icon name="home"></ion-icon> HOME
     </ion-button>
   </div>
-</ion-content>
