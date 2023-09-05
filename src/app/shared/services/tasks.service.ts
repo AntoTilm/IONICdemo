@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { iTask } from '../models/iTask';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class TasksService {
 
@@ -33,27 +33,24 @@ export class TasksService {
   }
 
   getById(id: number): iTask | undefined {
-    return this.tasks.find(iTask => iTask.id === id);
+    return this.tasks.find((iTask) => iTask.id === id);
   }
 
-  createTask(): void {
+  createTask(): void {}
 
-  }
-
-  updateTask(id:number, task : iTask): void {
-    let taskToUpdate : iTask | undefined = this.tasks.find(track => track.id === id);
+  updateTask(id: number, task: iTask): void {
+    let taskToUpdate: iTask | undefined = this.tasks.find(
+      (track) => track.id === id
+    );
     //Si track trouvée : modif
-    if(taskToUpdate) {
+    if (taskToUpdate) {
       taskToUpdate.name = task.name;
       taskToUpdate.assignedUser = task.assignedUser;
       taskToUpdate.deadline = task.deadline;
       taskToUpdate.status = task.status;
     }
   }
-
-  deleteTask(id : number): void { 
-    this.tasks = this.tasks.filter(tasks => tasks.id !== id);
-  }
-  
-
+  deleteTask(id: number): void {
+    this.tasks = this.tasks.filter((tasks) => tasks.id !== id);
+  }  
 }
