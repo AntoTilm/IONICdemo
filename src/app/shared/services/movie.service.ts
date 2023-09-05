@@ -1,18 +1,17 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http'
 import {map, Observable} from 'rxjs';
-import {MovieItem, MovieResponse} from '../models/movie';
+import {MovieDetails, MovieItem, MovieResponse} from '../models/movie';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MovieService {
 
+  public selectedMovie : MovieDetails | undefined;
   url: string = 'https://www.omdbapi.com/?i=tt3896198&apikey=369af1ed'
 
-  constructor(private _httpClient: HttpClient) {
-    console.log(this.url+`&s=${'Guardians'}`)
-  }
+  constructor(private _httpClient: HttpClient) {}
 
   searchMovies(query: string): Observable<{
     Response: string;
@@ -34,5 +33,14 @@ export class MovieService {
     );
   }
 
-
+  getMovieDetail(title: string) : Observable<MovieDetails> {
+    return this._httpClient.get<MovieDetails>(this.url+`&t=${title}`).pipe(map(details => {
+      return {
+        Rating : details.Ratings![0].Value,
+        Title : details.Title,
+        Poster : details.Poster,
+        Plot : details.Plot
+      }
+    }))
+  }
 }
