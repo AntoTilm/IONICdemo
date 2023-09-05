@@ -30,7 +30,7 @@ export class TasksService {
     {
       id: 4,
       name: 'Grocery shopping',
-      assignedUser: 'Alice',
+      assignedUser: 'Thomas',
       deadline: new Date(2023, 9, 15),
       status: 'done',
     },
@@ -38,7 +38,7 @@ export class TasksService {
     {
       id: 5,
       name: 'Laundry',
-      assignedUser: 'Sophie',
+      assignedUser: 'Julien',
       deadline: new Date(2023, 9, 10),
       status: 'done',
     },
