@@ -1,9 +1,4 @@
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">movie-list</ion-title>
-    </ion-toolbar>
-  </ion-header>
   <ion-item>
     <ion-input aria-label="search for movie" [clearInput]="true" type="text" [(ngModel)]="inputValue"
                (keyup.enter)="refreshMovieList($event)"></ion-input>
@@ -14,3 +9,11 @@
     </ion-item>
   </ion-list>
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+      <ion-button color='dark' fill="outline" expand="full" [routerLink]="'/home'" class="custom-button">
+        <ion-icon name="home"></ion-icon> Home
+      </ion-button>
+  </ion-toolbar>
+</ion-footer>

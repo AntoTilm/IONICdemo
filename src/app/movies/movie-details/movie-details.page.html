@@ -1,9 +1,4 @@
 
-  <ion-header>
-    <ion-toolbar>
-      <ion-title>movie-details</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
 <ion-content>
 
@@ -13,9 +8,19 @@
       <img [src]="movie.Poster" alt="movie poster">
     </div>
     <div class="div-texte">
-      <p> {{movie.Plot}} </p>
-      <p> {{movie.Rating}} </p>
+      <p> Plot : {{movie.Plot}} </p>
+      <p> Imdb Rating : {{movie.Rating}} </p>
     </div>
   </div>
 
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+      <ion-button color='dark' fill="outline" expand="full" [routerLink]="'/movie-list'" class="custom-button">
+        <ion-icon name="back"></ion-icon> Back
+      </ion-button>
+  </ion-toolbar>
+</ion-footer>
+
+
