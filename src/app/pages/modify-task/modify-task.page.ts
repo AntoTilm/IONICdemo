@@ -16,6 +16,8 @@ export class ModifyTaskPage implements OnInit {
   task:iTask | undefined
   taskForm! : FormGroup;
   taskId : number;
+  user : string[] = [];
+
   
   
   constructor(private _fb : FormBuilder,
@@ -53,6 +55,7 @@ this._router.navigateByUrl('task-list');
   ngOnInit() {
   this.taskId = +this._activeRoute.snapshot.params['id'];
   this.task = this._taskService.getById(this.taskId);
+  this.user = this._taskService.chooseUser()
   this.taskForm.patchValue({
     name: this.task?.name,
     assignedUser: this.task?.assignedUser,

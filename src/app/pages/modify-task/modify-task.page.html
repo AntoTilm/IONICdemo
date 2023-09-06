@@ -17,9 +17,15 @@
       <ion-input type="text" placeholder="{{ task?.name }}" formControlName="name"></ion-input>
     </ion-item>
 
-    <ion-item class="ion-margin">
+    <!-- <ion-item class="ion-margin">
       <ion-label position="stacked">Change Assigned User</ion-label>
       <ion-input type="text" placeholder="{{ task?.assignedUser }}" formControlName="assignedUser"></ion-input>
+    </ion-item> -->
+    <ion-item class="ion-margin">
+      <ion-label position="stacked">Change Assigned User</ion-label>
+      <ion-select formControlName="assignedUser" placeholder='{{ task?.assignedUser }}'>
+        <ion-select-option *ngFor="let item of user" value="{{ item }}">{{ item }}</ion-select-option>
+      </ion-select>
     </ion-item>
 
     <ion-item class="ion-margin">
