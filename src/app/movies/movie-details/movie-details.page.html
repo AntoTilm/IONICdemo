@@ -7,14 +7,15 @@
 
 <ion-content>
 
-   
-  <h1>Taxi</h1>
-  <div class="div-img">
-    <img [src]="'https://m.media-amazon.com/images/M/MV5BODFmMWY3ZWQtMTBhNy00MzE4LWIxODYtNTFmMzczMzY1YmNjXkEyXkFqcGdeQXVyMjMwNDgzNjc@._V1_SX300.jpg'" alt="movie poster"> 
-  </div>
-  <div class="div-texte">
-    <p> Plot : To work off his tarnished driving record, a hip taxi driver must chauffeur a loser police inspector on the trail of German bank robbers.</p>
-    <p> Imdb - rating : 9.5/10</p>
+  <div *ngIf="movie">
+    <h1>{{movie.Title}}</h1>
+    <div class="div-img">
+      <img [src]="movie.Poster" alt="movie poster">
+    </div>
+    <div class="div-texte">
+      <p> {{movie.Plot}} </p>
+      <p> {{movie.Rating}} </p>
+    </div>
   </div>
 
 </ion-content>

@@ -11,7 +11,6 @@ import {Router} from "@angular/router";
 export class MovieListPage implements OnInit {
 
   constructor(private _movieService: MovieService, private _router: Router) {
-    _movieService.getMovieDetail('taxi')
   }
 
   inputValue: string = '';
@@ -30,15 +29,8 @@ export class MovieListPage implements OnInit {
     })
   }
 
-  getMovieDetail(title: string): void {
-    this._movieService.getMovieDetail(title).subscribe(data => {
-      this._movieService.selectedMovie = {
-        Rating : data.Rating,
-        Plot : data.Plot,
-        Poster : data.Poster,
-        Title : data.Title
-      }
-    })
+  selectMovie(title: string): void {
+    this._movieService.getMovieDetail(title);
     this._router.navigateByUrl('movie-details')
   }
 

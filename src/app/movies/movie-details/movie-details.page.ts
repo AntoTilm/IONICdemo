@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {MovieService} from "../../shared/services/movie.service";
-import {MovieItem} from "../../shared/models/movie";
+import {MovieDetails, MovieItem} from "../../shared/models/movie";
 
 @Component({
   selector: 'app-movie-details',
@@ -9,22 +9,12 @@ import {MovieItem} from "../../shared/models/movie";
 })
 export class MovieDetailsPage implements OnInit {
 
+  movie : MovieDetails | undefined
   constructor(private _movieService : MovieService) {
-  }
-
-  inputValue : string = '';
-
-  movie : MovieItem = {
-    Title: '',
-    Poster: '',
+    _movieService.selectedMovie$.subscribe(movie => this.movie = movie)
   }
 
   ngOnInit() {
   }
-  onEnter(event: any) {
-    this._movieService.searchMovies(this.inputValue).subscribe(movies => {
-      this.movie.Title = movies.Search[0].title;
-      this.movie.Poster = movies.Search[0].poster;
-    })
-  }
+
 }
