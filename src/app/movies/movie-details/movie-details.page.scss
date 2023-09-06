@@ -1,0 +1,62 @@
+ion-content {
+    --background : black;
+}
+
+h1 {
+    color: rgb(233, 226, 226);
+    padding-left: 20px ;
+    font-family: fantasy;
+    font-size: 40px;
+    
+}
+
+// p {
+//     padding-right: 10px;
+//     padding-left: 10px;
+//     color: gray;
+//     background-color: white;
+// }
+
+// .div-img {
+//     display: flex;
+//     justify-content: center;
+// }
+// img {
+//     width: 90%;
+//     padding-top: 10px;
+//     border-radius: 15px;
+// }
+
+// Dans votre fichier SCSS (par exemple, home.page.scss)
+
+.div-img {
+    position: relative; // Permet de positionner les éléments enfants par rapport à celui-ci
+
+    // Ajustez la largeur et la hauteur au besoin
+    padding-right: 10px;
+    padding-left: 10px;
+    width: 100%;
+    height: 500px; // Ajustez la hauteur en fonction de vos besoins
+  
+    // Style de l'image de fond
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; // Ajuste la taille de l'image pour remplir le conteneur
+    }
+  }
+  
+  .div-texte {
+    position: absolute; // Positionnement absolu par rapport à son parent
+    top: 50%; // Position au centre vertical
+
+    color: #fff; // Couleur du texte
+    font-size: 20px; // Taille de police personnalisée
+    background-color: rgba(0, 0, 0, 0.5); // Fonds semi-transparent noir (ajustez l'opacité selon vos préférences)
+    padding: 10px 10px; // Espacement intérieur (facultatif)
+
+    border-radius: 10px; // Coins arrondis (facultatif)
+  }
+
+  
+  

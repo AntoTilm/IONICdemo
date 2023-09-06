@@ -8,7 +8,7 @@ import {MovieItem, MovieResponse} from '../models/movie';
 })
 export class MovieService {
 
-  url: string = 'https://www.omdbapi.com/?i=tt3896198&apikey=369af1ed'
+  url: string = 'https://www.omdbapi.com/?i=tt3896198&apikey=369af1ed&t=taxi'
 
   constructor(private _httpClient: HttpClient) {
     console.log(this.url+`&s=${'Guardians'}`)
@@ -19,7 +19,7 @@ export class MovieService {
     totalResults: string;
     Search: { title: string; poster: string }[]
   }> {
-    return this._httpClient.get<MovieResponse>(this.url + `&s=${query}`).pipe(
+    return this._httpClient.get<MovieResponse>('https://www.omdbapi.com/?i=tt3896198&apikey=369af1ed&t=taxi').pipe(
       map(response => {
         // Transforming the 'Search' array items to match our MovieItem structure
         return {
@@ -33,6 +33,4 @@ export class MovieService {
       })
     );
   }
-
-
 }
