@@ -1,8 +1,10 @@
 <ion-content [fullscreen]="true">
-  <ion-item>
+  <!-- <ion-item>
     <ion-input aria-label="search for movie" [clearInput]="true" type="text" [(ngModel)]="inputValue"
                (keyup.enter)="refreshMovieList($event)"></ion-input>
-  </ion-item>
+  </ion-item> -->
+  <ion-searchbar [(ngModel)]="inputValue" (keyup.enter)="refreshMovieList($event)" search-icon="search-circle" animated="true" placeholder="Movie"></ion-searchbar>
+
   <ion-list>
     <ion-item *ngFor="let title of movies">
       <ion-label (click)="selectMovie(title)">{{title}}</ion-label>
