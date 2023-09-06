@@ -5,12 +5,6 @@
 </ion-header>
 
 <ion-content [fullscreen]="true" class="ion-padding">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Modify Task</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
   <form [formGroup]="taskForm" (ngSubmit)="taskUpdate()">
     <ion-item class="ion-margin">
       <ion-label position="stacked">Change Task Name</ion-label>

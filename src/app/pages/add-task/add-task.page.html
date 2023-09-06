@@ -1,51 +1,3 @@
-<!-- <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>ADD TASK</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Add Task</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <section>
-    <div class="form-card">
-      <h2>NOUVEAU FORMULAIRE</h2>
-      <form [formGroup]="taskForm">
-        <div class="form-group">
-          <label for="name">Name</label>
-          <input id="name" type="text" formControlName="name">
-        </div>
-        <div class="form-group">
-          <label for="assignedUser">Assigned To</label>
-          <textarea id="assignedUser" type="text" formControlName="assignedUser">
-          </textarea>
-        </div>
-        <div class="form-group">
-          <label for="deadline">Deadline</label>
-          <input id="deadline" type="date" formControlName="deadline">
-        </div>
-        <div>
-          <select formControlName="status" placeholder="choose">
-              <option value="" hidden>Choose the task status</option>
-              <option value="to start">to start</option>
-              <option value="in progress">in progress</option>
-              <option value="done">done</option>
-          </select>
-        </div>
-        <div class="action-buttons">
-          <button type="submit" (click)="onSubmitForm()">Enregistrer</button>
-        </div>      
-      </form>
-  </div>
-  </section>
-  <ion-button class="ion-margin center" [routerLink]="'/task-list'">Task List</ion-button>
-</ion-content> -->
-
-
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title class="ion-text-center">Add Task</ion-title>
@@ -53,12 +5,6 @@
 </ion-header>
 
 <ion-content [fullscreen]="true" class="ion-padding">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">ADD TASK</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
   <section class="form-section">
     <div class="form-card">
       <!-- <h2>NEW TASK</h2> -->
