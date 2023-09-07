@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
-import { TasksService } from 'src/app/shared/services/tasks.service';
+import {Component, OnInit} from '@angular/core';
+import {FormGroup, FormBuilder} from '@angular/forms';
+import {ActivatedRoute, Router} from '@angular/router';
+import {TasksService} from 'src/app/shared/services/tasks.service';
 
 @Component({
   selector: 'app-add-task',
@@ -14,7 +14,7 @@ export class AddTaskPage implements OnInit {
   // constructor(private _fb : FormBuilder,
   //   private _taskService : TasksService,
   //   private _router : Router,
-  //   private _activeRoute : ActivatedRoute) { 
+  //   private _activeRoute : ActivatedRoute) {
   //     this.taskForm = this._fb.group({
   //       name : [null],
   //       assignedUser : [null],
@@ -23,14 +23,14 @@ export class AddTaskPage implements OnInit {
   //     });
   taskForm!: FormGroup;
 
-  constructor(tasksService: TasksService, private formBuilder: FormBuilder,private _router : Router,private _activeRoute : ActivatedRoute) {
+  constructor(tasksService: TasksService, private formBuilder: FormBuilder, private _router: Router, private _activeRoute: ActivatedRoute) {
     this._tasksService = tasksService; // Initialiser la propriété _tasksService avec l'instance reçue du constructeur
   }
 
 
   ngOnInit() {
     this.taskForm = this.formBuilder.group({
-      id : [this._tasksService.tasks.length+1],
+      id: [this._tasksService.tasks.length + 1],
       name: [null],
       assignedUser: [null],
       deadline: [null],
@@ -41,7 +41,6 @@ export class AddTaskPage implements OnInit {
   onSubmitForm() {
     this._tasksService.tasks.push(this.taskForm.value);
     console.log(this._tasksService.tasks);
-this._router.navigateByUrl('task-list');
-
+    this._router.navigateByUrl('task-list');
   }
 }

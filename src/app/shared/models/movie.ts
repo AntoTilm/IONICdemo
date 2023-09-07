@@ -8,3 +8,15 @@ export interface MovieResponse {
   totalResults: string;
   Response: string;
 }
+
+export interface MovieRating {
+  Value : number
+}
+export interface MovieDetails {
+
+  Ratings? : [MovieRating],
+  Rating : number,
+  Title: string,
+  Poster : string,
+  Plot : string
+}

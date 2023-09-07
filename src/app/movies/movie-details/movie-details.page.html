@@ -1,0 +1,26 @@
+
+
+<ion-content>
+
+  <div *ngIf="movie">
+    <h1>{{movie.Title}}</h1>
+    <div class="div-img">
+      <img [src]="movie.Poster" alt="movie poster">
+    </div>
+    <div class="div-texte">
+      <p> Plot : {{movie.Plot}} </p>
+      <p> Imdb Rating : {{movie.Rating}} </p>
+    </div>
+  </div>
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+      <ion-button color='dark' fill="outline" expand="full" [routerLink]="'/movie-list'" class="custom-button">
+        <ion-icon name="back"></ion-icon> Back
+      </ion-button>
+  </ion-toolbar>
+</ion-footer>
+
+
